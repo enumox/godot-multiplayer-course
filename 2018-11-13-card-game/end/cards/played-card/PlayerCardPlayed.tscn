@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://cards/played-card/PlayerCardPlayed.gd" type="Script" id=1]
+
+[node name="PlayerCardPlayed" type="Position2D"]
+
+position = Vector2( 160, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+

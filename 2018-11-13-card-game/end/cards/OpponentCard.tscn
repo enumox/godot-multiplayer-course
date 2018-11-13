@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://cards/cardBack_red5.png" type="Texture" id=1]
+
+[node name="OpponentCard" type="Position2D"]
+
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, 96 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+
