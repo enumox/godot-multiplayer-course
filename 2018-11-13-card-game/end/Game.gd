@@ -7,6 +7,7 @@ signal player_scored(score)
 
 func _ready():
 	GameNetwork.connect('player_disconnected', self, '_on_player_disconnected')
+	GameNetwork.connect('server_disconnected', self, '_on_player_disconnected')
 
 func _on_player_disconnected():
 	print('player disconnected')

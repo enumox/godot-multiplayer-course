@@ -3,14 +3,18 @@ extends Node
 func _ready():
 	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 	get_tree().connect('network_peer_connected', self, '_on_player_connected')
+	get_tree().connect('server_disconnected', self, '_on_server_disconnected')
 
 func _on_player_disconnected(id):
 	pass
 
 func _on_player_connected(id):
-	print(id)
+	pass
 
 func _on_connected_to_server():
+	pass
+
+func _on_server_disconnected():
 	pass
 
 func create_server(port):

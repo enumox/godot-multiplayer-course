@@ -56,7 +56,6 @@ sync func card_played():
 		elif $OpponentCardPlayed.card.value == $PlayerCardPlayed.card.value:
 			player_scored = rand_range(0, 100) > 50
 		
-		
 		emit_signal('score_updated', player_scored)
 		if played_cards == 4 and deck_empty:
 			emit_signal('game_ended')

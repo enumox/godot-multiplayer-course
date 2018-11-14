@@ -9,7 +9,7 @@
 [ext_resource path="res://interface/emotes/emote_laugh.png" type="Texture" id=7]
 [ext_resource path="res://interface/emotes/Emote.tscn" type="PackedScene" id=8]
 [ext_resource path="res://cards/played-card/Table.gd" type="Script" id=9]
-[ext_resource path="res://cards/played-card/PlayerCardPlayed.tscn" type="PackedScene" id=10]
+[ext_resource path="res://cards/played-card/PlayedCard.tscn" type="PackedScene" id=10]
 [ext_resource path="res://cards/deck/Deck.gd" type="Script" id=11]
 [ext_resource path="res://cards/cardBack_red5.png" type="Texture" id=12]
 [ext_resource path="res://cards/hands/PlayerHand.gd" type="Script" id=13]
@@ -17,7 +17,7 @@
 [ext_resource path="res://cards/hands/OpponentHand.gd" type="Script" id=15]
 [ext_resource path="res://cards/OpponentCard.tscn" type="PackedScene" id=16]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -257,7 +257,6 @@ rect_rotation = 26.3041
 
 [node name="Table" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 640, 360 )
 script = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
@@ -397,11 +396,11 @@ autostart = false
 
 [connection signal="game_ended" from="Table" to="." method="_on_Table_game_ended"]
 
-[connection signal="players_played" from="Table" to="Table/PlayerCardPlayed" method="_on_Table_players_played"]
+[connection signal="players_played" from="Table" to="Table/OpponentCardPlayed" method="_on_Table_players_played"]
 
 [connection signal="players_played" from="Table" to="Table/PlayerHand" method="_on_Table_players_played"]
 
-[connection signal="players_played" from="Table" to="Table/OpponentCardPlayed" method="_on_Table_players_played"]
+[connection signal="players_played" from="Table" to="Table/PlayerCardPlayed" method="_on_Table_players_played"]
 
 [connection signal="score_updated" from="Table" to="." method="_on_Table_score_updated"]
 

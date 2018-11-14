@@ -24,6 +24,10 @@ func _on_player_disconnected(id):
 func _on_player_connected(id):
 	._on_player_connected(id)
 
+func _on_server_disconnected():
+	._on_server_disconnected()
+	emit_signal('server_disconnected')
+
 remote func _send_player_information(info):
 	opponent_info = info
 	if get_tree().get_network_unique_id() == 1:
@@ -43,6 +47,3 @@ func create_server(port, nickname):
 	.create_server(port)
 	player_info.name = nickname
 	player_info.id = get_tree().get_network_unique_id()
-
-
-

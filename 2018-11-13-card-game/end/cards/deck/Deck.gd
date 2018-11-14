@@ -8,15 +8,15 @@ signal deck_emptied
 func _ready():
 	randomize()
 	if get_tree().is_network_server():
-		initialize_cards()
+		_initialize_cards()
 
 func draw_card():
 	if cards.size() == 1:
 		emit_signal('deck_emptied')
 	return cards.pop_back()
 
-func initialize_cards():
-	for c in range(10):
+func _initialize_cards():
+	for c in range(52):
 		cards.append(_generate_new_card())
 
 func _generate_new_card():
@@ -27,7 +27,6 @@ func _generate_new_card():
 		card = { 'path': _get_card_selector(suit, value), 'value': value }
 		if not added_cards.has(card.path):
 			added_cards.append(card.path)
-			print(card.path)
 			return card
 
 func _get_card_selector(suit, value):

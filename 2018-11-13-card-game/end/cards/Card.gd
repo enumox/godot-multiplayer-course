@@ -14,9 +14,6 @@ var card_info = {
 	'value': ''
 }
 
-func _ready():
-	set_as_toplevel(true)
-
 func _process(delta):
 	if can_play and mouse_over and Input.is_action_just_pressed('select_card'):
 		hide()

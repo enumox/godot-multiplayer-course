@@ -14,4 +14,4 @@ func _on_PlayerHand_card_added():
 	for card in $Cards.get_children():
 		if not card.visible:
 			card.show()
-			break;
+			break

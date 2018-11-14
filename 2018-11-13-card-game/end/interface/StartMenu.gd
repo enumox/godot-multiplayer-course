@@ -34,7 +34,7 @@ func _on_NameEdit_text_changed(new_text):
 
 func _validate_menu():
 	var nick_invalid = nick_name.length() < 4
-	var ip_invalid = ip.length() < 6
+	var ip_invalid = ip.length() < 9
 	var port_invalid = port.length() < 4
 	
 	JoinButton.disabled = nick_invalid or ip_invalid or port_invalid
