@@ -9,11 +9,6 @@ var emotes = {
 	'laugh': preload('res://interface/emotes/emote_laugh.png')
 }
 
-func _ready():
-	if OPPONENT:
-		set_network_master(GameNetwork.opponent_info.id)
-	print('network master: ' + str(get_network_master()))
-
 remote func show_emote(emote):
 	texture = emotes[emote]
 	show()

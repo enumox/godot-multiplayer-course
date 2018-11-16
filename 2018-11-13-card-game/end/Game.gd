@@ -21,13 +21,14 @@ func _on_Table_score_updated(player_scored):
 		opponent_score += 1
 
 func _on_Table_game_ended():
-	if opponent_score > player_score:
-		$UI.set_final_text('You Lose!')
-		$UI.rpc('set_final_text', 'You Won!')
-	else:
-		$UI.set_final_text('You Won!')
-		$UI.rpc('set_final_text', 'You Lose!')
-	rpc('end_game')
+	if get_tree().is_network_server():
+		if opponent_score > player_score:
+			$UI.set_final_text('You Lose!')
+			$UI.rpc('set_final_text', 'You Won!')
+		else:
+			$UI.set_final_text('You Won!')
+			$UI.rpc('set_final_text', 'You Lose!')
+		rpc('end_game')
 
 sync func end_game():
 	$Timer.start()

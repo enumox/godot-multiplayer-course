@@ -1,15 +1,9 @@
 extends Control
 
-var center_text setget set_center_text
-
 func _ready():
 	$PlayerName.text = GameNetwork.player_info.name
 	$Score.text = str(GameNetwork.player_info.score)
 	$OpponentName.text = GameNetwork.opponent_info.name
-
-func set_center_text(new_value):
-	center_text = new_value
-	$Instruction.text = center_text
 
 remote func set_final_text(text):
 	$Instruction.text = text

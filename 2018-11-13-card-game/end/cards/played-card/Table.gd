@@ -21,7 +21,7 @@ func _ready():
 
 func set_played_card(card):
 	$PlayerCardPlayed.card = card
-	$OpponentCardPlayed.rpc_id(GameNetwork.opponent_info.id, 'switch_card', card)
+	$OpponentCardPlayed.rpc('switch_card', card)
 
 func _deal_hands():
 	for i in range(6):
@@ -35,7 +35,7 @@ func _deal_hands():
 
 func _on_PlayerHand_played(cards_left, card_played):
 	$PlayerCardPlayed.card = card_played
-	$OpponentCardPlayed.rpc_id(GameNetwork.opponent_info.id, 'switch_card', card_played)
+	$OpponentCardPlayed.rpc('switch_card', card_played)
 	rpc('toggle_turn')
 	rpc('card_played')
 

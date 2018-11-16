@@ -16,7 +16,7 @@ func draw_card():
 	return cards.pop_back()
 
 func _initialize_cards():
-	for c in range(52):
+	for c in range(10):
 		cards.append(_generate_new_card())
 
 func _generate_new_card():

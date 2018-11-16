@@ -10,8 +10,11 @@ func _on_OpponentCardPlayed_opponent_played():
 			card.hide()
 			break
 
-func _on_PlayerHand_card_added():
+remote func show_random_card():
 	for card in $Cards.get_children():
 		if not card.visible:
 			card.show()
 			break
+
+func _on_PlayerHand_card_added():
+	rpc('show_random_card')

@@ -398,9 +398,9 @@ autostart = false
 
 [connection signal="players_played" from="Table" to="Table/OpponentCardPlayed" method="_on_Table_players_played"]
 
-[connection signal="players_played" from="Table" to="Table/PlayerHand" method="_on_Table_players_played"]
-
 [connection signal="players_played" from="Table" to="Table/PlayerCardPlayed" method="_on_Table_players_played"]
+
+[connection signal="players_played" from="Table" to="Table/PlayerHand" method="_on_Table_players_played"]
 
 [connection signal="score_updated" from="Table" to="." method="_on_Table_score_updated"]
 
